@@ -1,0 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400);
+
+.content{
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.img-responsive{
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
