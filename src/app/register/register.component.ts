@@ -18,26 +18,15 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerUser = new RegisterUser();
-    // this.registerUser = {
-    //   userName: '',
-    //   fullName: '',
-    //   password: '',
-    //   password2: '',
-    // };
   }
 
   onSubmit(f: NgForm) {
     f.valid ? console.log('Data: ', this.registerUser) : console.log("INVALID");
-    if (
-      f.valid
-    ) {
-
-      
-
+    if (f.valid) {
       this.loading = true;
       this.registerSub = this.auth.register(this.registerUser).subscribe(
         (success) => {
-          //console.log(success , "Sss")
+          //console.log(success)
           this.success = true;
           this.warning = null;
           this.loading = false;

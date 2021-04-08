@@ -1,24 +1,24 @@
-<h1>{{this.album.name}}</h1>
-<p>Full track listing for {{album.name}}<br>
+<h1>{{this.album?.name}}</h1>
+<p>Full track listing for {{album?.name}}<br>
     Click the &nbsp;<mat-icon mat-list-icon>queue_music</mat-icon>&nbsp; icon to <strong>add</strong> a song from your favourites list</p>
 <br>
 <mat-card>
     <mat-card-content fxLayout="row wrap" fxLayout.xs="column">
-        <div fxflex><img [src]="album.images[1].url" alt="album cover" [style.margin]="'10px'"
+        <div fxflex><img [src]="album?.images[1].url" alt="album cover" [style.margin]="'10px'"
                 [style.max-width]="'90%'" /></div>
         <div fxFlex>
             <div [style.min-width]="'300px'" [style.margin]="'10px'">
-                <strong>Record Label: </strong> {{album.label}}<br />
-                <strong>Release Date: </strong> {{album.release_date | date:'shortDate'}}<br /><br />
-                <strong>Tracks:</strong> {{album.total_tracks}}<br />
-                <strong>Popularity: </strong> {{album.popularity}}<br /><br />
+                <strong>Record Label: </strong> {{album?.label}}<br />
+                <strong>Release Date: </strong> {{album?.release_date | date:'shortDate'}}<br /><br />
+                <strong>Tracks:</strong> {{album?.total_tracks}}<br />
+                <strong>Popularity: </strong> {{album?.popularity}}<br /><br />
 
                 <mat-chip-list aria-label="Artist selection">
-                    <mat-chip  *ngFor="let artist of album.artists" routerLink="/artist/{{artist.id}}">{{artist.name}}</mat-chip>
+                    <mat-chip  *ngFor="let artist of album?.artists" routerLink="/artist/{{artist.id}}">{{artist.name}}</mat-chip>
                 </mat-chip-list>
                 <!-- <pre>{{album | json }}</pre> -->
                 <br />
-                <div *ngFor="let copy of album.copyrights">{{copy.text}}</div>
+                <div *ngFor="let copy of album?.copyrights">{{copy.text}}</div>
             </div>
         </div>
     </mat-card-content>
@@ -28,7 +28,7 @@
 <!-- <pre>{{album.tracks.items | json}}</pre> -->
 <mat-list>
     <!-- Single "Responsive" Material List Item-->
-    <mat-list-item *ngFor="let song of album.tracks.items;">
+    <mat-list-item *ngFor="let song of album?.tracks.items;">
         <mat-icon mat-list-icon (click)="addToFavourites(song.id)">queue_music</mat-icon>
         <div mat-line>
             <mat-card>

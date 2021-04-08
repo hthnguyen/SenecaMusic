@@ -70,36 +70,6 @@ export class MusicDataService {
     );
   }
 
-  // addToFavourites(id) {
-  //   // console.log(id + ' passed');
-  //   if (id != null && this.favouritesList.length < 50) {
-  //     this.favouritesList.push(id);
-  //     //console.log(this.favouritesList);
-  //     return true;
-  //   } else return false;
-  // }
-
-  // getFavourites(): Observable<any> {
-  //   return this.spotifyToken.getBearerToken().pipe(
-  //     mergeMap((token) => {
-  //       if (this.favouritesList.length <= 0)
-  //         return new Observable((o) => {
-  //           // return an empty array if favourites list has no any song
-  //           o.next([]);
-  //         });
-  //       else
-  //         return this.http.get<any>(
-  //           `https://api.spotify.com/v1/tracks?ids=${this.favouritesList.join()}`,
-  //           { headers: { Authorization: `Bearer ${token}` } }
-  //         );
-  //     })
-  //   );
-  // }
-
-  // removeFromFavourites(id): Observable<any> {
-  //   this.favouritesList.splice(this.favouritesList.indexOf(id), 1);
-  //   return this.getFavourites();
-  // }
 
   addToFavourites(id): Observable<any> {
     // TODO: make a PUT request to environment.userAPIBase/favourites/:id to add id to favourites
@@ -127,9 +97,9 @@ export class MusicDataService {
           return this.spotifyToken.getBearerToken().pipe(
             mergeMap((token) => {
               if (favouritesArray.length <= 0) {
-                return new Observable((o) => {
+                return new Observable((data) => {
+                  data.next({ tracks: [] });
                   // return an empty array if favourites list has no any song
-                  (o) => o.next({ tracks: [] });
                 });
               } else
                 return this.http.get<any>(

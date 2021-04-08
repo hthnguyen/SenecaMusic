@@ -1,7 +1,7 @@
-<h1>{{artist.name}}</h1>
-<p>Full discography for {{artist.name}} <br>Click the <strong>album cover</strong> for more information.</p>
+<h1>{{artist?.name}}</h1>
+<p>Full discography for {{artist?.name}} <br>Click the <strong>album cover</strong> for more information.</p>
 <br>
-<mat-card
+<mat-card *ngIf="artist"
     [style.background]="'url(' + artist.images[0].url + ') no-repeat center center'"
     [style.background-size]="'cover'" [style.height]="'450px'">
 </mat-card>
