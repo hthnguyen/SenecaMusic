@@ -6,7 +6,7 @@
             <mat-error>{{warning}}</mat-error><br />
             <mat-form-field class="full-width-input">
                 <input matInput placeholder="User Name" name="username" [(ngModel)]='registerUser.userName' [email]="true" required autofocus>
-                <mat-error>Please provide a valid email address</mat-error>
+                <mat-error>Please provide a valid email address. An email address must be contain a single '@'</mat-error>
             </mat-form-field><br />
             <mat-form-field class="full-width-input">
                 <input matInput placeholder="Full Name" name="fullName" [(ngModel)]='registerUser.fullName' type="text" required autofocus>
