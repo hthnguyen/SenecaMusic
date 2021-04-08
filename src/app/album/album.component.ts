@@ -36,7 +36,7 @@ export class AlbumComponent implements OnInit, OnDestroy {
   }
 
   addToFavourites(trackID) {
-    console.log("Click")
+    //console.log("Click")
     this.data.addToFavourites(trackID).subscribe(
       (success) => {
         this.openSnackBar('Adding to Favorites...', 'Done');
