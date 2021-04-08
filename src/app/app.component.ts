@@ -6,7 +6,7 @@
 * 
 *  Name: Hoang Trung Hieu Nguyen     Student ID: 142914191     Date: 2021-04-08
 *
-*  Online Link to Music App: https://hthnguyen-spotify-api.netlify.app/
+*  Online Link to Music App: https://hthnguyen-spotify-api.netlify.app/ 
 *
 *  Online Link to User Api: https://api-seneca-music.herokuapp.com/api/user
 *
