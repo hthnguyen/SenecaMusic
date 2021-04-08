@@ -5,8 +5,8 @@
         <h2>Log In</h2>
         <mat-error>{{warning}}</mat-error><br />
         <mat-form-field class="full-width-input">
-          <input matInput placeholder="User Name" name="username" [(ngModel)]='user.userName' [email]="true" required autofocus>
-          <mat-error>Please provide a valid user name</mat-error>
+          <input matInput placeholder="Email address" name="username" [(ngModel)]='user.userName' [email]="true" required autofocus>
+          <mat-error>Please provide a valid email address</mat-error>
         </mat-form-field><br />
         <mat-form-field class="full-width-input">
           <input matInput type="password" placeholder="Password" name="password" password="password" [(ngModel)]='user.password' required>
