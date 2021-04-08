@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { MusicDataService } from '../music-data.service';
 
@@ -18,10 +19,13 @@ export class AlbumComponent implements OnInit, OnDestroy {
   constructor(
     private data: MusicDataService,
     private route: ActivatedRoute,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
+    this.titleService.setTitle('Album');
+    
     this.idSub = this.route.params.subscribe((params) => {
       this.id = params['id'];
     });
@@ -32,6 +36,7 @@ export class AlbumComponent implements OnInit, OnDestroy {
   }
 
   addToFavourites(trackID) {
+    console.log("Click")
     this.data.addToFavourites(trackID).subscribe(
       (success) => {
         this.openSnackBar('Adding to Favorites...', 'Done');

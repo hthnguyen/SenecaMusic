@@ -11,7 +11,7 @@ import { AuthService } from './auth.service';
 
 export class AppComponent implements OnInit{
   searchString: string;
-  title = 'web422-a4';
+  title = 'Seneca Music';
   public token: any;
 
   constructor(private router: Router, private auth:AuthService) { }

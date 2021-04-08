@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { MusicDataService } from '../music-data.service';
 
@@ -15,9 +16,10 @@ export class ArtistDiscographyComponent implements OnInit, OnDestroy {
   private idSub;
   private albumsSub;
   private artistSub;
-  constructor(private data: MusicDataService, private route: ActivatedRoute) {}
+  constructor(private data: MusicDataService, private route: ActivatedRoute, private titleService: Title) {}
 
   ngOnInit(): void {
+    this.titleService.setTitle('Artist Discography');
     let idSub = this.route.params.subscribe((params) => {
       this.id = params['id'];
     });

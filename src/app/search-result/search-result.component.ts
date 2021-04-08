@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { MusicDataService } from '../music-data.service';
 
@@ -12,9 +13,10 @@ export class SearchResultComponent implements OnInit, OnDestroy {
   searchQuery: any;
   private resultSub;
   private querySub;
-  constructor(private data: MusicDataService, private route: ActivatedRoute) {}
+  constructor(private data: MusicDataService, private route: ActivatedRoute, private titleService: Title) {}
 
   ngOnInit(): void {
+    this.titleService.setTitle('Search by Artist');
     this.querySub = this.route.queryParams.subscribe((query) => {
       this.searchQuery = query['q'];
 
